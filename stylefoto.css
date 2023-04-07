@@ -1,0 +1,60 @@
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #eecece;
+  }
+  
+  th {
+    text-align: center;
+    background-color: #dda2a2;
+  }
+  
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Estilos para los botones */
+  .btn {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 0;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  /* Estilos para la imagen */
+  td img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos para el formulario de eliminar */
+  form {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  form button {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+  }
+  
+  form button:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  body {
+    background-image: url('https://images.pexels.com/photos/8386435/pexels-photo-8386435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+    

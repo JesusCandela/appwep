@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link href="{{ asset('CSS/stylelugar.css') }}" tipe="text/css" rel="stylesheet">
+</head>
+<body>
 <div class="container">
     <div class="row">
         @include('admin.menu')
@@ -33,4 +37,6 @@
         </div>
     </div>
 </div>
+</body>
+
 @endsection

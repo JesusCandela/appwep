@@ -1,6 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
+<head>
+    <link href="{{ asset('CSS/stylewelcome.css') }}" tipe="text/css" rel="stylesheet">
+
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12 pt-5 pb-5">
@@ -27,7 +31,7 @@
         </div>
 
 
-        <div class="col-sm-6 bg-light">            
+        <div class="col-sm-6 bg-light" >            
             <h2 class="text-center">LUGARES</h2>            
             @forelse ($lugares as $item)
                 <div class="row mt-5 mb-3">                    
@@ -43,13 +47,13 @@
             @empty                
             @endforelse
         </div>
-
-        <div class="col-sm-6">
+       
+        <div class="col-sm-6 bg-light">
             <h2 class="text-center">EMPRESAS</h2>            
             @forelse ($empresas as $item)
                 <div class="row mt-5 mb-3">
                     <div class="col-sm-6">                    
-                        <img src="/img/empresa/{{$item->urlfoto}}" class="img-fluid">
+                        <img src="/img/empresa/{{$item->urlfoto}}" class="img-fluid" >
                     </div>
                     <div class="col-sm-6">
                         <h3 class="h5">{{$item->razonsocial}}</h3>
@@ -61,6 +65,10 @@
             @endforelse
         </div>
         
+        
+        
     </div>
 </div>
+</body>
+
 @endsection

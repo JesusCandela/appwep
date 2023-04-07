@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+<head>
+    <link href="{{ asset('CSS/styleruta.css') }}" tipe="text/css" rel="stylesheet">
+</head>
+<body>
 <div class="container">
     <div class="row">
         @include('admin.menu')
@@ -38,9 +42,9 @@
                             </ol>
                         </td>
                         <td>
-                            <a href="{{ route('ruta.edit',$item->id)}}" class="btn btn-success btn-block" >EDITAR</a>
-                            {!! Form::open(['method'=>'DELETE','route'=>['ruta.destroy',$item->id],'style'=>'display:inline']) !!}
-                            {!! Form::submit('ELIMINAR',['class'=>'btn btn-success','onclick'=>'return confirm("ESTA SEGURO DE ELIMINAR")']) !!}
+                            <a href="{{ route('ruta.edit',$item->id)}}" class="btn btn-success btn-block"  >EDITAR</a>
+                            {!! Form::open(['method'=>'DELETE','route'=>['ruta.destroy',$item->id],'style'=>'display:inline; margin: 2px']) !!}
+                            {!! Form::submit('ELIMINAR',['class'=>'btn btn-success btn-block','style'=>'margin: 2px','onclick'=>'return confirm("ESTA SEGURO DE ELIMINAR")']) !!}
                             {!! Form::close() !!}
                         </td>
                     </tr>
@@ -50,7 +54,10 @@
                 </tbody>
 
             </table>
+    
         </div>
     </div>
-</div>
+</div> 
+</body>
+
 @endsection

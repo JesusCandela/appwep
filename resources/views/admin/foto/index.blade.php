@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link href="{{ asset('CSS/stylefoto.css') }}" tipe="text/css" rel="stylesheet">
+</head>
+<body>
 <div class="container">
     <div class="row">
         @include('admin.menu')
@@ -32,5 +36,7 @@
             </table>
         </div>
     </div>
-</div>
+</div>  
+</body>
+
 @endsection

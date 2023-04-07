@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <link href="{{ asset('CSS/Style.css') }}" tipe="text/css" rel="stylesheet">
+
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-8 pt-5 pb-5">
@@ -35,5 +40,8 @@
             <p class="text-right">{{$ruta->visitas}}</p>
         </div>
     </div>
-</div>
+</div> 
+</body>
+
 @endsection
+

@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<head>   
+
+    <link rel="stylesheet" href="{{asset('CSS/stylefrontlugar.css')}}" tipe="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-8 pt-5 pb-5">
@@ -35,4 +40,7 @@
         </div>
     </div>
 </div>
+</body>
+
+
 @endsection

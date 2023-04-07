@@ -1,0 +1,80 @@
+/* Estilo para la tabla */
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    font-size: 0.9rem;
+    border-collapse: collapse;
+  }
+  
+  /* Estilo para las celdas de encabezado de la tabla */
+  .table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #8eaac7;
+    text-align: center;
+  }
+  
+  /* Estilo para las celdas de datos de la tabla */
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #799ec4;
+    text-align: center;
+  }
+  
+  /* Estilo para los botones de acción */
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #007bff;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /* Estilo para el botón de "NUEVA LUGAR" */
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  /* Estilo para la fila de encabezado de la tabla */
+  thead {
+    background-color: #dba1a1;
+  }
+  
+  /* Estilo para la fila de datos de la tabla */
+  tbody {
+    background-color: rgb(184, 219, 183);
+  }
+  
+ 
+  body {
+    background-color: #000;
+    background-image: radial-gradient(circle, rgb(222, 195, 240), rgb(150, 199, 231));
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

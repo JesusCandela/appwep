@@ -1,0 +1,63 @@
+.jumbotron {
+    background-color: #d4da9f;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    border: none;
+    border-radius: 5px;
+    background-color: #F8F8F8;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px #aaa;
+  }
+  
+  .form-group textarea {
+    height: 200px;
+  }
+  
+  .form-group img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .btn-success {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .btn-success:hover {
+    background-color: #3E8E41;
+  }
+  
+  #boton-guardar:focus {
+    outline: none;
+  }
+  
+  /* Estilos para el editor de texto CKEditor */
+  .ck-editor__editable {
+    min-height: 200px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  

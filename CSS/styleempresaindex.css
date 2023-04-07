@@ -1,0 +1,67 @@
+body {
+    background-color: #000;
+    background-image: radial-gradient(circle, #FFF, rgb(150, 231, 207));
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+/* Estilos para la tabla */
+.table {
+    margin-top: 20px;
+}
+
+/* Estilos para los encabezados de la tabla */
+thead th {
+    font-weight: bold;
+}
+
+/* Estilos para las filas pares de la tabla */
+tbody tr:nth-child(even) {
+    background-color: #aec9ec;
+}
+
+/* Estilos para los botones de acción */
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilos para el botón de "Nueva Empresa" */
+.btn-success {
+    background-color: #1abc9c;
+    border: none;
+}
+
+/* Estilos para los botones de "Editar" y "Eliminar" */
+.btn-success:not(.btn-outline) {
+    background-color: #2ecc71;
+    border: none;
+    margin-right: 10px;
+}
+
+.btn-success:not(.btn-outline):hover {
+    background-color: #27ae60;
+}
+
+/* Estilos para la imagen */
+img {
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+thead {
+    background-color: #dba1a1;
+  }

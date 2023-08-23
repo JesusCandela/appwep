@@ -16,18 +16,11 @@ class GaleriaController extends Controller
         return view('galeria.index', compact('fotos'));
     }
 
-    public function like($id)
+    public function like(Request $request, Foto $foto)
     {
-        // Obtener la foto con el ID proporcionado
-        $foto = Foto::findOrFail($id);
+        $foto->update(['likes'=>$foto->likes+1]);
+        return $foto;
 
-        // Incrementar el contador de likes en 1
-        $foto->likes += 1;
-
-        // Guardar los cambios en la base de datos
-        $foto->save();
-
-        return redirect()->back()->with('success', '¡Diste like a la foto!');
     }
 }
 

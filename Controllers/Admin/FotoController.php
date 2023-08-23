@@ -29,11 +29,6 @@ class FotoController extends Controller
             $foto->urlfoto =$request->file('urlfoto')->getClientOriginalName();
         }
 
-        if($request->tipo){
-            $foto->tipo = 1;
-        }else{
-            $foto->tipo = 0;
-        }
         $foto->lugar_id  =   $request->lugar_id;
         $foto->save();
         return redirect('/admin/foto');
@@ -96,7 +91,7 @@ class FotoController extends Controller
         return back()->with('success', '¡Diste like a la foto!');
     }
     public function index(){
-        $fotos = Foto::all();
+        $fotos = Foto::whereNotNull('lugar_id')->get();
         return view("admin.foto.index",compact("fotos"));
     }
 }

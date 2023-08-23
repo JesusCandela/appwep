@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Empresa;
+namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Empresa;
 use App\Models\Foto;
 use Illuminate\Support\Str;
 use Auth;
-class EmpresaFotoController extends Controller
-{
-    public function show(){
 
-    }
+
+class FotoEmpresaAdminController extends Controller
+{
+   
     public function create(){
-        $user = Auth::user();
-        $empresa = $user->Empresa()->pluck('razonsocial', 'id');
-        return view('empresa.foto.create', compact('empresa'));
+        $empresa  =   Empresa::orderBy('razonsocial','ASC')->pluck('razonsocial','id');
+
+        return view('admin.empresa.fotos.create',compact("empresa"));
     }
 
 
     public function store(Request $request){
-        $request->validate(['nombre' => 'required|min:3|max:255|unique:fotos,nombre','orden'=> 'required|integer|min:1',]);
+
         $foto = new Foto($request->all());
         
         if($request->hasFile('urlfoto')){
@@ -32,15 +32,15 @@ class EmpresaFotoController extends Controller
 
         $foto->empresa_id  =   $request->empresa_id;
         $foto->save();
-        return redirect('/empresa/empresas/foto');
+        return redirect('/admin/img/empresa/fotos');
 
     }
 
     public function edit($id){
         $foto =      Foto::findOrFail($id);
-        $lugar   =      Lugar::orderBy('nombre','ASC')->pluck('nombre','id');
+        $empresa   =      Empresa::orderBy('razonsocial','ASC')->pluck('razonsocial','id');
 
-        return view('empresa.foto.edit',compact('foto','empresa'));
+        return view('admin.empresa.fotos.edit',compact('foto','empresa'));
     }
 
     public function update(Request $request,$id){
@@ -58,10 +58,10 @@ class EmpresaFotoController extends Controller
             copy($urlfoto->getRealPath(),$ruta);            
             $foto->urlfoto  =   $request->file('urlfoto')->getClientOriginalName();
         }
-        
+       
         $foto->empresa_id  =   $request->empresa_id;
         $foto->save();
-        return redirect('/empresa/empresas/foto');
+        return redirect('/admin/img/empresa/fotos');
     }
 
     public function destroy($id){
@@ -71,12 +71,12 @@ class EmpresaFotoController extends Controller
         if(file_exists($borrar)){ unlink(realpath($borrar)); }
         
         $foto->delete();
-        return redirect('/empresa/empresas/foto');
+        return redirect('/admin/img/empresa/fotos');
     }
     public function indexGaleria()
     {
         $fotos = Foto::all();
-        return view('foto.index', compact('fotos'));
+        return view('foto.empresa.index', compact('fotos'));
     }
     
     public function like($id)
@@ -91,6 +91,6 @@ class EmpresaFotoController extends Controller
         $user = Auth::user();
         $empresas = $user->Empresa()->pluck('id');
         $fotos = Foto::whereIn('empresa_id',$empresas)->get();
-        return view("empresa.foto.index",compact("fotos"));
+                return view("admin.empresa.fotos.index",compact("fotos"));
     }
 }

@@ -14,6 +14,7 @@ use Auth;
 
 class EmpresaController extends Controller
 {
+    public function show(){}
     public function index(){
         $empresas = Empresa::all();
         return view("admin.empresa.index",compact("empresas"));

@@ -8,6 +8,7 @@ use App\Models\Ruta;
 use App\Models\Empresa;
 use App\Models\Lugar;
 use App\Models\Foto;
+use App\Models\Video;
 
 class JsonController extends Controller
 {
@@ -16,12 +17,14 @@ class JsonController extends Controller
         $listaempresas  = Empresa::all();
         $listalugares   = Lugar::all();
         $listafotos     = Foto::all();
+        $listavideo     = Video::all();
         $data = [
             'success' => true,
             'listarutas' => $listarutas,
             'listaempresas' => $listaempresas,
             'listalugares' => $listalugares,
             'listafotos' => $listafotos,
+            'listavideo'=> $listavideo,
         ];
         return response()->json($data, 200);
 

@@ -1,0 +1,90 @@
+/* Estilo de la imagen */
+.img-container {
+   
+    background-position: center;
+    position: absolute;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    border-radius: 10px; /* Bordes redondeados para el contenedor de la imagen */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Sombra en el contenedor de la imagen */
+    margin-top: 20px;
+    max-width: 1000px; /* Ajustar el valor para hacer el contenedor más ancho */
+    max-height: 5000px; /* Ajustar el valor para hacer el contenedor más alto */
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el contenedor */
+    transition: transform 0.3s; /* Agrega una transición suave al cambiar el tamaño */
+}
+
+.img-container img:hover {
+    transform: scale(1.1); /* Escala la imagen un 10% al hacer hover */
+}
+.card {
+    
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    
+}
+
+.card-body {
+    position: relative;
+    z-index: 0;
+}
+.card-body a {
+    color: white; /* Cambiar el color de los enlaces a blanco */
+}
+
+.heart-container {
+    position: relative;
+    height: 20px;
+    width: 20px;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: rgb(255, 0, 0); /* Establecer el color azul para el corazón vacío */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5; /* Establecer una opacidad de 0.5 para dar el efecto "flotante" */
+    transition: all 0.3s ease-in-out; /* Agregar una transición para suavizar el cambio de color */
+}
+
+.btn-like {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.btn-like .far.fa-heart {
+    color: black; /* Establecer el color negro para el corazón vacío */
+}
+
+.btn-like.active .far.fa-heart {
+    display: none; /* Ocultar corazón vacío cuando se activa (se da like) */
+}
+
+.btn-like.active .heart-icon {
+    color: red; /* Cambiar a color rojo cuando se activa (se da like) */
+    opacity: 1; /* Hacer el corazón lleno completamente visible */
+}
+.heart-icon {
+    font-size: 30px;
+    color:rgb(255, 0, 0); /* Corazón azul inicialmente */
+    transition: color 0.3s; /* Transición de color al dar like */
+}
+
+.btn-like.active .heart-icon {
+    color: red; /* Corazón rojo al dar like */
+}
+
+

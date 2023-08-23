@@ -1,0 +1,89 @@
+/* stylelogin.css */
+.login-card {
+    border: 1px solid #a84cc4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow:  8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-card-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4cdb70;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #00ff0d;
+  }
+  
+  .eyes-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .eye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .eye::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+  }
+  
+  .eye.closed::before {
+    width: 0;
+    height: 0;
+  }
+  
+  .eye.closed::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  
+.custom-card {
+    background-color: #50b5c7; /* Cambiar el color del fondo a azul (#007bff) */
+    color: #fff; /* Cambiar el color del texto a blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar una sombra al card */
+    /* Otros estilos personalizados que desees agregar */
+  }

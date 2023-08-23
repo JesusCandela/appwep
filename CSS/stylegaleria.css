@@ -1,0 +1,286 @@
+/* Estilos para el card */
+/* Estilos para el card */
+.card {
+    background-color: #85f36f;
+    margin-bottom: 20px;
+    border: 1px solid #67d7eb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    perspective: 1000px; /* Agregar una perspectiva para el efecto 3D */
+    transform-style: preserve-3d; /* Mantener el efecto 3D en los hijos */
+    overflow: hidden; /* Ocultar cualquier contenido que se desborde del contenedor */
+}
+
+/* Estilos para la imagen */
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 200px; /* Ajustar la altura de la imagen */
+    object-fit: cover;
+    transform: translateZ(0); /* Establecer una transformación inicial en Z */
+    transition: transform 0.3s; /* Agregar una transición para la imagen */
+}
+
+.card:hover .card-img-top {
+    transform: perspective(1000px) rotateY(10deg) translateZ(-50px); /* Agregar efecto 3D y salida de la imagen al hacer hover */
+}
+
+/* Animación para mantener el efecto 3D */
+@keyframes stay3D {
+    0% {
+        transform: perspective(1000px) rotateY(10deg) translateZ(-50px);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(10deg) translateZ(-50px);
+    }
+}
+
+.card.stay-3d:hover .card-img-top {
+    animation: stay3D 1s forwards; /* Mantener el efecto 3D después de hacer hover */
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 300px; /* Ajustar la altura de la imagen */
+    object-fit: cover;
+}
+
+/* ... Estilos anteriores ... */
+
+.card-text {
+    margin-bottom: 10px;
+    color: #333; /* Color de texto en el card */
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.5; /* Altura de línea para un espaciado adecuado */
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+
+
+
+.card-body {
+    padding: 10px;
+}
+
+
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+/* Estilo para el corazón cuando es "No me gusta" (vaciado) */
+/* ... */
+
+/* ... */
+.heart-container {
+    position: relative;
+    height: 20px;
+    width: 20px;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: rgb(255, 0, 0); /* Establecer el color azul para el corazón vacío */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5; /* Establecer una opacidad de 0.5 para dar el efecto "flotante" */
+    transition: all 0.3s ease-in-out; /* Agregar una transición para suavizar el cambio de color */
+}
+
+.btn-like {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-like .far.fa-heart {
+    color: black; /* Establecer el color negro para el corazón vacío */
+}
+
+.btn-like.active .far.fa-heart {
+    display: none; /* Ocultar corazón vacío cuando se activa (se da like) */
+}
+
+.btn-like.active .heart-icon {
+    color: red; /* Cambiar a color rojo cuando se activa (se da like) */
+    opacity: 1; /* Hacer el corazón lleno completamente visible */
+}
+/* ... */
+/* ... */
+/* ... */
+.heart-container {
+    position: relative;
+}
+
+/* ... */
+
+.heart-icon {
+    font-size: 30px;
+    color: rgb(189, 6, 6); /* Corazón azul inicialmente */
+    transition: color 0.3s; /* Transición de color al dar like */
+}
+
+.btn-like.active .heart-icon {
+    color: red; /* Corazón rojo al dar like */
+}
+/* Estilos para el título "Galería de Imágenes" */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff; /* Color del texto del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el texto */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido */
+    text-align: center; /* Centrar el texto */
+  }
+  
+
+body {
+  height: 100%;
+  font-size: 14px;
+  background-image: url("/img/fondo/fondop2.jpg");
+  background-size: cover;
+}
+
+/*Estios para la imagen en grande*/
+.imagen-en-grande {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para la "X" para cerrar la imagen */
+.cerrar-imagen {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilo para la imagen en grande */
+#imagen-mostrada {
+    max-width: 90%;
+    max-height: 80%;
+    margin: 0 auto;
+}
+
+/* Estilo para desactivar el scroll cuando se muestra la imagen en grande */
+body.imagen-mostrada {
+    overflow: hidden;
+}
+  /* Estilos para la imagen en grande */
+  .imagen-en-grande {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#imagen-mostrada {
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    cursor: zoom-out;
+}
+
+/* Estilos para la información de la imagen */
+.imagen-en-grande {
+    /* ... */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imagen-contenedor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imagen-contenedor img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imagen-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+}
+
+.zoom-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.zoom-buttons button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.zoom-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.zoom-buttons button:focus {
+    outline: none;
+}
+
+.zoom-buttons button:active {
+    background-color: #004d99;
+}
+.zoom-buttons button i {
+    margin-right: 5px;
+}
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.imagen-container.zoom-in img {
+    transform: scale(1.5);
+}
+
+.imagen-container.zoom-out img {
+    transform: scale(0.5);
+}

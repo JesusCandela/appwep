@@ -14,12 +14,12 @@ class Ruta extends Model
     protected $fillable = [
         'slug',
         'title',
-        'description',
         'nombre',
         'descripcion',
         'urlfoto',
         'visitas',
-        'orden'
+        'orden',
+        'likes',
     ];
 
     public function Empresa(){

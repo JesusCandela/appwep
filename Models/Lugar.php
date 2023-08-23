@@ -20,6 +20,7 @@ class Lugar extends Model
         'visitas',
         'orden',
         'estado',
+        'likes',
         'ruta_id'
     ];
     public function Foto(){

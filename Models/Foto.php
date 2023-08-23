@@ -15,9 +15,22 @@ class Foto extends Model
         'urlfoto',        
         'tipo', // 0 = foto; 1 = foto 360 
         'orden',
-        'lugar_id'
+        'lugar_id',
+        'empresa_id',
+        'likes'
     ];
-    public function Lugar(){
-        return $this->belongsTo("App\Models\Lugar");
+   
+    
+
+    public function lugar()
+    {
+        return $this->belongsTo(Lugar::class);
     }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class);
+    }
+
+  
 }

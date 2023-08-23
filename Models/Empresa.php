@@ -20,11 +20,17 @@ class Empresa extends Model
         'orden',
         'estado', // 0,1 APROBADO POR EL ROL ADMIN
         'publicacion', // 0, 1 PUBLICADO POR EL ROL EMPRESA
+        'longitud',
+        'latitud',
+        'likes',
         'ruta_id',
         'user_id'
     ];
     public function Ruta(){
         return $this->belongsTo("App\Models\Ruta");
+    }
+    public function Foto(){
+        return $this->belongsTo("App\Models\Foto","id","empresa_id");
     }
     public function User(){
         return $this->belongsTo("App\Models\User");

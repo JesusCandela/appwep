@@ -51,12 +51,7 @@
                     {!! Form::select('ruta_id',$rutas,null ,['class'=>'form-control']) !!}
                 </div>
 
-                <div class="form-group">
                 
-                    {!! Form::checkbox('estado',null,null) !!}
-                    <label for="estado">ESTADO </label>
-                </div>
-
 
                 <div class="form-group">
                     <label for="urlfoto">IMAGEN 900px X 400px</label> <br>
@@ -69,6 +64,7 @@
             <a href="javascript: history.go(-1)" class="btn btn-success">CANCELAR</a>  
             {!! Form::submit('GUARDAR',['class'=>'btn btn-success', 'id' => 'boton-guardar']) !!}
             {!! Form::close() !!}
+            
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}

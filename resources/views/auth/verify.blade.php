@@ -25,4 +25,13 @@
         </div>
     </div>
 </div>
+<style>
+    .custom-card {
+  background-color: #28a745; /* Cambiar el color del fondo a verde (#28a745) */
+  color: #fff; /* Cambiar el color del texto a blanco */
+  border: none; /* Eliminar el borde del card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar una sombra al card */
+  /* Otros estilos personalizados que desees agregar */
+}
+</style>
 @endsection

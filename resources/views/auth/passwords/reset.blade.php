@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card reset-password-card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
@@ -62,4 +62,14 @@
         </div>
     </div>
 </div>
+
+<style>
+    .reset-password-card {
+  background-color: #007bff; /* Cambiar el color del fondo a azul (#007bff) */
+  color: #fff; /* Cambiar el color del texto a blanco */
+  border: none; /* Eliminar el borde del card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar una sombra al card */
+  /* Otros estilos personalizados que desees agregar */
+}
+</style>
 @endsection

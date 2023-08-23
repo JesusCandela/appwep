@@ -11,24 +11,24 @@
 
     <div class="row justify-content-center">
         <div class="col-sm-12 pt-5 pb-5 justify-content-center">
-            <h1 class="text-center">RUTAS TURÍSTICAS</h1>
+            <h1 class="text-center">Empresas</h1>
         </div>
-        @forelse ($rutas as $item)
+        @forelse ($empresas as $item)
             <div class="col-sm-4 mt-5 mb-5">
                 <div class="card">
-                    <img src="/img/ruta/{{$item->urlfoto}}" class="card-img-top">
+                    <img src="/img/empresa/{{$item->urlfoto}}" class="card-img-top">
                     <div class="card-body text-center">
-                        <h3 >{{$item->nombre}}</h3>
+                        <h3 >{{$item->razonsocial}}</h3>
                         <p>{{$item->title}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="/ruta/{{$item->slug}}" class="btn btn-success btn-block w-100">VISITAR</a>
+                        <a href="/cliente/{{$item->slug}}" class="btn btn-success btn-block w-100">VISITAR</a>
                     </div>
                 </div>
             </div>
         @empty            
         @endforelse   
-        <div class="d-flex justify-content-center">{{$rutas->links()}}</div>
+        <div class="d-flex justify-content-center">{{$empresas->links()}}</div>
 
     </div>
 </div>

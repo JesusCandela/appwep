@@ -53,12 +53,7 @@
                     {!! Form::select('ruta_id',$rutas,$lugar->ruta_id ,['class'=>'form-control']) !!}
                 </div>
 
-                <div class="form-group">
                 
-                    {!! Form::checkbox('estado',null,$lugar->estado) !!}
-                    <label for="estado">ESTADO </label>
-                </div>
-
                 <div class="form-group">
                     <label for="urlfoto">IMAGEN 900px X 400px</label> <br>
                     <img src="/img/lugar/{{$lugar->urlfoto}}">

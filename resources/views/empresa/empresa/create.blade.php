@@ -2,6 +2,8 @@
 @section('content')
 <head>
     <link href="{{ asset('CSS/styleform.css') }}" tipe="text/css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -43,11 +45,14 @@
                     <label for="ruta_id">RUTAS </label>
                     {!! Form::select('ruta_id',$rutas,null ,['class'=>'form-control']) !!}
                 </div>
-
-                <div class="form-group">
                 
-                    {!! Form::checkbox('estado',null,null) !!}
-                    <label for="estado">ESTADO </label>
+                <div class="form-group">
+                    <label for="latitud">Ingrese La Latitud</label>
+                    {!! Form::text('latitud',null ,['class'=>'form-control','required']) !!}
+                </div>
+                <div class="form-group">
+                    <label for="longitud">Ingrese La Longitud</label>
+                    {!! Form::text('longitud',null ,['class'=>'form-control','required']) !!}
                 </div>
 
 
@@ -61,11 +66,12 @@
                     <img src="/img/empresa/foto.jpg">
                     {!! Form::file('urllogo') !!}
                 </div>
+                <a href="javascript: history.go(-1)" class="btn btn-success">CANCELAR</a>  
+                {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
+                {!! Form::close() !!}
 
             </div>
-            <a href="javascript: history.go(-1)" class="btn btn-success">CANCELAR</a>  
-            {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
-            {!! Form::close() !!}
+            
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}

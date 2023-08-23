@@ -8,7 +8,7 @@
     <div class="row">
         @include('admin.menu')
         <div class="col-sm-10">
-            {!! Form::open(['route'=>['foto.update',$foto],'method'=>'PUT','files'=>true]) !!}
+            {!! Form::open(['route'=>['fotosadmin.update',$foto],'method'=>'PUT','files'=>true]) !!}
             <div class="jumbotron">
 
                 <div class="form-group">

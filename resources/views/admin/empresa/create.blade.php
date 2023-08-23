@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <head>
     <link href="{{ asset('CSS/styleform.css') }}" tipe="text/css" rel="stylesheet">
@@ -39,15 +38,18 @@
                     <label for="orden">INGRESE ORDEN</label>
                     {!! Form::text('orden',null ,['class'=>'form-control']) !!}
                 </div>
+                
+                <div class="form-group">
+                    <label for="latitud">Ingrese La Latitud</label>
+                    {!! Form::text('latitud',null ,['class'=>'form-control','required']) !!}
+                </div>
+                <div class="form-group">
+                    <label for="longitud">Ingrese La Longitud</label>
+                    {!! Form::text('longitud',null ,['class'=>'form-control','required']) !!}
+                </div>
                 <div class="form-group">
                     <label for="ruta_id">RUTAS </label>
                     {!! Form::select('ruta_id',$rutas,null ,['class'=>'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                
-                    {!! Form::checkbox('estado',null,null) !!}
-                    <label for="estado">ESTADO </label>
                 </div>
 
 

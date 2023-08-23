@@ -27,7 +27,7 @@
             <nav class="navbar navbar-expand-md navbar-light  shadow-sm" >
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/img/Logo.png" alt="Logo AppTurismo">
+                    <img src="/img/Logochone.png" alt="Logo AppTurismo">
 
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -45,7 +45,7 @@
                             <!-- Authentication Links -->
                             @guest
                                 @if (Route::has('login'))
-                                    <li class="nav-item">
+                                    <li class="nav-item ">
                                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
                                 @endif
@@ -65,7 +65,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Cerrar Sesión') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

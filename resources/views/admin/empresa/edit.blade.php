@@ -35,17 +35,23 @@
                     <label for="orden">INGRESE ORDEN</label>
                     {!! Form::text('orden',$empresa->orden,['class'=>'form-control']) !!}
                 </div>
+                
+                <div class="form-group">
+                    <label for="latitud">Ingrese La Latitud</label>
+                    {!! Form::text('latitud',$empresa->latitud,['class'=>'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    <label for="longitud">INGRESE La Longitud</label>
+                    {!! Form::text('longitud',$empresa->longitud,['class'=>'form-control']) !!}
+                </div>
 
                 <div class="form-group">
                     <label for="ruta_id">RUTAS </label>
                     {!! Form::select('ruta_id',$rutas,$empresa->ruta_id ,['class'=>'form-control']) !!}
                 </div>
 
-                <div class="form-group">
-                
-                    {!! Form::checkbox('estado',null,$empresa->estado) !!}
-                    <label for="estado">ESTADO </label>
-                </div>
+            
 
                 <div class="form-group">
                     <label for="urlfoto">IMAGEN 900px X 400px</label> <br>

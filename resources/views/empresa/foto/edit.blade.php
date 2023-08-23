@@ -1,7 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
-<head>
+<head>    
     <link href="{{ asset('CSS/styleform.css') }}" tipe="text/css" rel="stylesheet">
 </head>
 <body>
@@ -9,39 +8,38 @@
     <div class="row">
         @include('admin.menu')
         <div class="col-sm-10">
-
-            {!! Form::open(['route'=>['fotosadmin.store'],'method'=>'POST','files'=>true]) !!}
-
+            {!! Form::open(['route'=>['foto.update',$foto],'method'=>'PUT','files'=>true]) !!}
             <div class="jumbotron">
-                
+
                 <div class="form-group">
                     <label for="nombre">INGRESE NOMBRE</label>
-                    {!! Form::text('nombre',null ,['class'=>'form-control','required']) !!}
-                </div>
+                    {!! Form::text('nombre',$foto->nombre ,['class'=>'form-control']) !!}
+                </div>    
                 <div class="form-group">
                     <label for="descripcion">INGRESE DESCRIPCIÓN</label>
-                    {!! Form::textarea('descripcion',null ,['class'=>'form-control','required']) !!}
+                    {!! Form::textarea('descripcion',$foto->descripcion,['class'=>'form-control','maxlength'=>'67']) !!}
                 </div>
 
-                               
                 <div class="form-group">
                     <label for="orden">INGRESE ORDEN</label>
-                    {!! Form::text('orden',null ,['class'=>'form-control']) !!}
+                    {!! Form::text('orden',$foto->orden,['class'=>'form-control']) !!}
                 </div>
-                <div class="form-group">
-                    <label for="lugar_id">LUGAR </label>
-                    {!! Form::select('lugar_id',$lugar,null ,['class'=>'form-control']) !!}
-                </div>
-            
 
                 <div class="form-group">
+                    <label for="empresa_id">LUGARES </label>
+                    {!! Form::select('empresa_id',$empresa,$foto->empresa_id ,['class'=>'form-control']) !!}
+                </div>
+
+              
+                <div class="form-group">
                     <label for="urlfoto">IMAGEN</label> <br>
-                    <img src="/img/foto/foto.jpg">
+                    <img src="/img/foto/{{$foto->urlfoto}}">
                     {!! Form::file('urlfoto') !!}
                 </div>
                
 
-            </div>
+
+            </div>           
             {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
             {!! Form::close() !!}
             @if (session('success'))
@@ -65,7 +63,7 @@
             </script>
         </div>
     </div>
-</div> 
+</div>
 </body>
 
 @endsection

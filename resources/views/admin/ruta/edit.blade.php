@@ -40,9 +40,10 @@
                     <img src="/img/ruta/{{$ruta->urlfoto}}">
                     {!! Form::file('urlfoto',['class'=>'form-control','required']) !!}
                 </div>
+                {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
+                {!! Form::close() !!}
             </div>           
-            {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
-            {!! Form::close() !!}
+           
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}

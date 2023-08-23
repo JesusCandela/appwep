@@ -7,16 +7,19 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        @include('admin.menu')
+        @include('empresa.menu')
         <div class="col-sm-10">
 
-            {!! Form::open(['route'=>['fotosadmin.store'],'method'=>'POST','files'=>true]) !!}
+            {!! Form::open(['route'=>['foto.store'],'method'=>'POST','files'=>true]) !!}
 
             <div class="jumbotron">
                 
-                <div class="form-group">
+                <div class="form-group mb-3" >
                     <label for="nombre">INGRESE NOMBRE</label>
-                    {!! Form::text('nombre',null ,['class'=>'form-control','required']) !!}
+                    <input type="text" class="form-control mb-0 @error('nombre') is-invalid @enderror" name='nombre' value="{{old('nombre')}}">
+                                    @error('nombre')
+                                    <div class="invalid-feedback"><b>{{ $message }}</b></div>
+                                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="descripcion">INGRESE DESCRIPCIÓN</label>
@@ -26,11 +29,14 @@
                                
                 <div class="form-group">
                     <label for="orden">INGRESE ORDEN</label>
-                    {!! Form::text('orden',null ,['class'=>'form-control']) !!}
+                    <input type="text" class="form-control mb-0 @error('orden') is-invalid @enderror" name='orden' value="{{old('orden')}}">
+                                    @error('orden')
+                                    <div class="invalid-feedback"><b>{{ $message }}</b></div>
+                                    @enderror
                 </div>
                 <div class="form-group">
-                    <label for="lugar_id">LUGAR </label>
-                    {!! Form::select('lugar_id',$lugar,null ,['class'=>'form-control']) !!}
+                    <label for="empresa_id">Empresa </label>
+                    {!! Form::select('empresa_id',$empresa,null ,['class'=>'form-control']) !!}
                 </div>
             
 
@@ -39,10 +45,10 @@
                     <img src="/img/foto/foto.jpg">
                     {!! Form::file('urlfoto') !!}
                 </div>
-               
+                {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
 
             </div>
-            {!! Form::submit('GUARDAR',['class'=>'btn btn-success','id' => 'boton-guardar']) !!}
+            
             {!! Form::close() !!}
             @if (session('success'))
                 <div class="alert alert-success">

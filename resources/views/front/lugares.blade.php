@@ -11,30 +11,29 @@
 
     <div class="row justify-content-center">
         <div class="col-sm-12 pt-5 pb-5 justify-content-center">
-            <h1 class="text-center">RUTAS TURÍSTICAS</h1>
+            <h1 class="text-center">Lugares1 Turisticos</h1>
         </div>
-        @forelse ($rutas as $item)
+        @forelse ($lugares as $item)
             <div class="col-sm-4 mt-5 mb-5">
                 <div class="card">
-                    <img src="/img/ruta/{{$item->urlfoto}}" class="card-img-top">
+                    <img src="/img/lugar/{{$item->urlfoto}}" class="card-img-top">
                     <div class="card-body text-center">
                         <h3 >{{$item->nombre}}</h3>
                         <p>{{$item->title}}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="/ruta/{{$item->slug}}" class="btn btn-success btn-block w-100">VISITAR</a>
+                        <a href="/lugar/{{$item->slug}}" class="btn btn-success btn-block w-100">VISITAR</a>
                     </div>
                 </div>
             </div>
         @empty            
         @endforelse   
-        <div class="d-flex justify-content-center">{{$rutas->links()}}</div>
-
+        <div class="d-flex justify-content-center">{{$lugares->links()}}</div>
     </div>
 </div>
 </body>
 <style>
-     .card {
+    .card {
   width: 300px; /* Ancho deseado para las tarjetas */
   height: 400px; /* Altura deseada para las tarjetas */}
   .card {
@@ -89,6 +88,5 @@
   background-color: #218838;
   border-color: #1e7e34;
 }
-</style>
 </style>
 @endsection
